@@ -14,7 +14,7 @@ public class RouteFinder implements IRouteFinder {
 
         LinkedList<Airport> queue = new LinkedList<>();
 
-        //gemini ixe tin idea gia map i tried with a list but it maloseme
+        //gemini eixe tin idea gia map i tried with a list 
         Map<Airport, Airport> path = new HashMap<>();
 
 
