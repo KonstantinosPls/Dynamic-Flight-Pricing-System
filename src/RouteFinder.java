@@ -66,23 +66,23 @@ public class RouteFinder implements IRouteFinder {
             return;
         }
 
-        for (int i = 0; i < route.size(); i++) {
-            System.out.print(route.get(i).getCityCode());
-            if (i < route.size() - 1) {
-                System.out.print(" --->> ");
-            }
-        }
+
         System.out.println();
     }
 
     public void printDetails(List<Airport> route,String Legs){
 
+
         int temp = route.size() - 2 ;
+
         if (Legs.equals("YES")){
             if (temp >= 0) {
+                if (temp == 0)
+                    System.out.println(" ===== Flight Description ===== \n");
+                if (temp > 0)
+                    System.out.println(" ===== Flights Description ===== \n");
                 double TotalPrice = 0;
                 double TotalDistance = 0;
-                System.out.println("Stops: " + temp);
                 for (int i = 0; i < route.size() - 1; i++) {
                     Airport departure = route.get(i);
                     Airport arival = route.get(i + 1);
@@ -111,14 +111,18 @@ public class RouteFinder implements IRouteFinder {
                             + String.format(" | %.2f", nextStop.getPrice()) + " Euros");
 
                 }
+                System.out.println("Stops: " + temp);
                 System.out.println( String.format("Final Price: %.2f", TotalPrice) + String.format("\nDistance Covered: %.1f", TotalDistance));
 
             }
         } else if (Legs.equals("NO")) {
             if (temp >= 0) {
+                if (temp == 0)
+                    System.out.println(" ===== Flight Description ===== \n");
+                if (temp > 0)
+                    System.out.println(" ===== Flights Description ===== \n");
                 double TotalPrice = 0;
                 double TotalDistance = 0;
-                System.out.println("Stops: " + temp);
                 for (int i = 0; i < route.size() - 1; i++) {
                     Airport departure = route.get(i);
                     Airport arival = route.get(i + 1);
@@ -147,6 +151,7 @@ public class RouteFinder implements IRouteFinder {
                             + String.format(" | %.2f", nextStop.getPrice()) + " Euros");
 
                 }
+                System.out.println("Stops: " + temp);
                 System.out.println( String.format("Final Price: %.2f", TotalPrice) + String.format("\nDistance Covered: %.1f", TotalDistance));
 
             }

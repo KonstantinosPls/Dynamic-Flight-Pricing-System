@@ -21,7 +21,7 @@ public class Main {
         ReservationManager reservationManager = new ReservationManager(hotFlights);
 
         // ========== SAMPLE SCENARIOS ==========
-        System.out.println("=== DYNAMIC FLIGHT PRICING SYSTEM DEMO ===\n");
+        System.out.println("=== DYNAMIC FLIGHT PRICING SYSTEM HARDCODED DEMO ===\n");
 
         // SAMPLE 1: Find route from Athens to Berlin
         System.out.println("--- SAMPLE 1: Route Finding (BFS) ---");
@@ -88,6 +88,30 @@ public class Main {
         performanceTest();
 
         System.out.println("\n=== END OF SAMPLES ===");
+
+
+        ////////////////////
+        Scanner read = new Scanner(System.in);
+
+        while (true) {
+            System.out.println("Would you like to see an optional menu about flights? yes/no");
+            String specific = read.nextLine().toLowerCase();
+            if (specific.equals("yes")) {
+                Menu.menu(airports, finder);
+                break;
+            }
+            if (specific.equals("no")) {
+                break;
+            } else
+                System.out.println("Wrong input.");
+        }
+        System.out.println("Program Terminates.");
+
+
+
+
+        ///////////////////
+
     }
 
     /**
